@@ -11,10 +11,13 @@ namespace Service.MarketProduct.Grpc
 		[OperationContract]
 		ValueTask<ProductListGrpcResponse> GetProductList(GetProductListGrpcRequest request);
 
+		[OperationContract]
 		ValueTask<ProductGrpcResponse> GetProduct(GetProductGrpcRequest request);
 
+		[OperationContract]
 		ValueTask<CommonGrpcResponse> UpdateProduct(UpdateProductGrpcRequest request);
-		
+
+		[OperationContract]
 		ValueTask<CheckEnabledGrpcResponse> CheckEnabled(CheckEnabledGrpcRequest request);
 	}
 }
