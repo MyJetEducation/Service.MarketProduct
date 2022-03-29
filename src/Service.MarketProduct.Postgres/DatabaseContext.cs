@@ -14,7 +14,7 @@ namespace Service.MarketProduct.Postgres
 		{
 		}
 
-		public DbSet<MarketProductEntity> AssetsDictionarEntities { get; set; }
+		public DbSet<MarketProductEntity> MarketProductEntities { get; set; }
 
 		public static DatabaseContext Create(DbContextOptionsBuilder<DatabaseContext> options)
 		{

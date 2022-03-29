@@ -7,6 +7,6 @@ namespace Service.MarketProduct.Grpc.Models
 	public class CheckEnabledGrpcRequest
 	{
 		[DataMember(Order = 1)]
-		public MarketProductType[] ProductTypes { get; set; }
+		public MarketProductType ProductType { get; set; }
 	}
 }

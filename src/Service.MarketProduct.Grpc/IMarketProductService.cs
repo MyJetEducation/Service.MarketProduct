@@ -9,15 +9,15 @@ namespace Service.MarketProduct.Grpc
 	public interface IMarketProductService
 	{
 		[OperationContract]
-		ValueTask<ProductListGrpcResponse> GetProductList(GetProductListGrpcRequest request);
+		ValueTask<ProductListGrpcResponse> GetProductListAsync(GetProductListGrpcRequest request);
 
 		[OperationContract]
-		ValueTask<ProductGrpcResponse> GetProduct(GetProductGrpcRequest request);
+		ValueTask<ProductGrpcResponse> GetProductAsync(GetProductGrpcRequest request);
 
 		[OperationContract]
-		ValueTask<CommonGrpcResponse> UpdateProduct(UpdateProductGrpcRequest request);
+		ValueTask<CommonGrpcResponse> UpdateProductAsync(UpdateProductGrpcRequest request);
 
 		[OperationContract]
-		ValueTask<CheckEnabledGrpcResponse> CheckEnabled(CheckEnabledGrpcRequest request);
+		ValueTask<CheckEnabledGrpcResponse> CheckEnabledAsync(CheckEnabledGrpcRequest request);
 	}
 }

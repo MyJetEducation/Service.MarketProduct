@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using Service.MarketProduct.Domain.Models;
 
 namespace Service.MarketProduct.Grpc.Models
@@ -20,9 +19,6 @@ namespace Service.MarketProduct.Grpc.Models
 		public decimal? Price { get; set; }
 
 		[DataMember(Order = 5)]
-		public DateTime? Date { get; set; }
-
-		[DataMember(Order = 6)]
 		public bool Disabled { get; set; }
 	}
 }
