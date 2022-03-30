@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Service.MarketProduct.Domain.Models;
+using Service.MarketProduct.Postgres.Models;
 
 #nullable disable
 
@@ -23,13 +24,21 @@ namespace Service.MarketProduct.Postgres.Migrations
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Disabled = table.Column<bool>(type: "boolean", nullable: true),
                     Price = table.Column<decimal>(type: "numeric", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    Description = table.Column<string>(type: "text", nullable: true)
+                    Category = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table => table.PrimaryKey("PK_market_product", x => x.ProductType));
 
-	        foreach (MarketProductType productType in Enum.GetValues<MarketProductType>())
-		        migrationBuilder.InsertData(tableName, "ProductType", Enum.GetName(productType), schema);
+            void InsertData(MarketProductType productType, MarketProductCategory category) =>
+                migrationBuilder.InsertData(tableName, new[] { nameof(MarketProductEntity.ProductType), nameof(MarketProductEntity.Category) }, new object[] { productType.ToString(), category.ToString() }, schema);
+
+            InsertData(MarketProductType.RetryPack1, MarketProductCategory.Education);
+            InsertData(MarketProductType.RetryPack10, MarketProductCategory.Education);
+            InsertData(MarketProductType.RetryPack25, MarketProductCategory.Education);
+            InsertData(MarketProductType.RetryPack100, MarketProductCategory.Education);
+            InsertData(MarketProductType.EducationProgressWipe, MarketProductCategory.Education);
+            InsertData(MarketProductType.MascotСharacter, MarketProductCategory.Masccot);
+            InsertData(MarketProductType.MascotSkin, MarketProductCategory.Masccot);
+            InsertData(MarketProductType.MascotEmotion, MarketProductCategory.Masccot);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder) => 

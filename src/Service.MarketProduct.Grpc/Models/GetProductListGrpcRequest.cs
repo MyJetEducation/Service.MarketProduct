@@ -11,5 +11,8 @@ namespace Service.MarketProduct.Grpc.Models
 
 		[DataMember(Order = 2)]
 		public MarketProductType[] ProductTypes { get; set; }
+
+		[DataMember(Order = 3)]
+		public MarketProductCategory? ProductCategory { get; set; }
 	}
 }

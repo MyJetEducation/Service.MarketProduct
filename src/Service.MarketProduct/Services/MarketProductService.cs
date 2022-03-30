@@ -32,6 +32,7 @@ namespace Service.MarketProduct.Services
 		{
 			bool withDisabled = request.WithDisabled.GetValueOrDefault();
 			MarketProductType[] productTypes = request.ProductTypes;
+			MarketProductCategory? category = request.ProductCategory;
 			MarketProductEntity[] entities = null;
 
 			try
@@ -40,6 +41,7 @@ namespace Service.MarketProduct.Services
 					.MarketProductEntities
 					.WhereIf(!withDisabled, model => model.Disabled == false || model.Disabled == null)
 					.WhereIf(!productTypes.IsNullOrEmpty(), model => productTypes.Contains(model.ProductType))
+					.WhereIf(category != null, model => model.Category == category)
 					.ToArrayAsync();
 			}
 			catch (Exception exception)

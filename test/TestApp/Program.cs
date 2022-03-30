@@ -36,9 +36,8 @@ namespace TestApp
 				{
 					ProductType = productType,
 					Disabled = false,
-					Description = $"{productName} description",
-					Price = rand.Next(),
-					Name = $"{productName} name"
+					Category = MarketProductCategory.Education,
+					Price = rand.Next()
 				});
 
 				if (commonGrpcResponse.IsSuccess == false)

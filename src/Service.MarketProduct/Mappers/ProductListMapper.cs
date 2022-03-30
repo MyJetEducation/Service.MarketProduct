@@ -10,8 +10,7 @@ namespace Service.MarketProduct.Mappers
 		{
 			Date = entity.Date,
 			Disabled = entity.Disabled == true,
-			Description = entity.Description,
-			Name = entity.Name,
+			Category = entity.Category,
 			Price = entity.Price,
 			ProductType = entity.ProductType
 		};
@@ -20,8 +19,7 @@ namespace Service.MarketProduct.Mappers
 		{
 			entity.Disabled = request.Disabled;
 			entity.Date = now;
-			entity.Description = request.Description;
-			entity.Name = request.Name;
+			entity.Category = request.Category;
 			entity.Price = request.Price;
 			entity.ProductType = request.ProductType;
 		}

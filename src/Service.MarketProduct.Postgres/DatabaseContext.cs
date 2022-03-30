@@ -39,8 +39,7 @@ namespace Service.MarketProduct.Postgres
 			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Date);
 			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Disabled);
 			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Price);
-			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Name);
-			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Description);
+			modelBuilder.Entity<MarketProductEntity>().Property(e => e.Category).HasConversion<string>().IsRequired();
 			modelBuilder.Entity<MarketProductEntity>().Property(e => e.ProductType).HasConversion<string>().IsRequired();
 
 			modelBuilder.Entity<MarketProductEntity>().HasKey(e => e.ProductType);

@@ -33,14 +33,11 @@ namespace Service.MarketProduct.Postgres.Migrations
                     b.Property<DateTime?>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Category")
                         .HasColumnType("text");
 
                     b.Property<bool?>("Disabled")
                         .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("numeric");

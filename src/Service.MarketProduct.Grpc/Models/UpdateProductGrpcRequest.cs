@@ -10,15 +10,12 @@ namespace Service.MarketProduct.Grpc.Models
 		public MarketProductType ProductType { get; set; }
 
 		[DataMember(Order = 2)]
-		public string Name { get; set; }
+		public MarketProductCategory Category { get; set; }
 
 		[DataMember(Order = 3)]
-		public string Description { get; set; }
-
-		[DataMember(Order = 4)]
 		public decimal? Price { get; set; }
 
-		[DataMember(Order = 5)]
+		[DataMember(Order = 4)]
 		public bool Disabled { get; set; }
 	}
 }
