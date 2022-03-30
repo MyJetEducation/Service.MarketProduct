@@ -17,5 +17,8 @@ namespace Service.MarketProduct.Grpc.Models
 
 		[DataMember(Order = 4)]
 		public bool Disabled { get; set; }
+
+		[DataMember(Order = 5)]
+		public int Priority { get; set; }
 	}
 }

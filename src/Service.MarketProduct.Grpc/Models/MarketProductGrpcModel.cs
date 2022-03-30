@@ -21,5 +21,10 @@ namespace Service.MarketProduct.Grpc.Models
 
 		[DataMember(Order = 5)]
 		public bool Disabled { get; set; }
+
+		[DataMember(Order = 6)]
+		public int Priority { get; set; }
+
+		public bool IsValid() => Price != null && !Disabled;
 	}
 }

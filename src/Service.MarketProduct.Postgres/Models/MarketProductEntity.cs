@@ -12,6 +12,8 @@ namespace Service.MarketProduct.Postgres.Models
 
 		public decimal? Price { get; set; }
 
+		public int Priority { get; set; }
+
 		public MarketProductCategory Category { get; set; }
 	}
 }

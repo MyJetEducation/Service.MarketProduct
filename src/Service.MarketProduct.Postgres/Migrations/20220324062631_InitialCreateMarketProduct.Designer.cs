@@ -42,6 +42,9 @@ namespace Service.MarketProduct.Postgres.Migrations
                     b.Property<decimal?>("Price")
                         .HasColumnType("numeric");
 
+                    b.Property<int>("Priority")
+                        .HasColumnType("integer");
+
                     b.HasKey("ProductType");
 
                     b.ToTable("market_product", "education");

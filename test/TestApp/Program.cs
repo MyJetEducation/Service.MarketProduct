@@ -26,7 +26,7 @@ namespace TestApp
 			IGrpcServiceProxy<IMarketProductService> serviceProxy = factory.GetMarketProductService();
 			IMarketProductService client = serviceProxy.Service;
 
-			var rand = new Random();
+			var rand = new Random(100);
 
 			foreach (MarketProductType productType in Enum.GetValues<MarketProductType>())
 			{
@@ -37,7 +37,8 @@ namespace TestApp
 					ProductType = productType,
 					Disabled = false,
 					Category = MarketProductCategory.Education,
-					Price = rand.Next()
+					Price = rand.Next(),
+					Priority = 10
 				});
 
 				if (commonGrpcResponse.IsSuccess == false)

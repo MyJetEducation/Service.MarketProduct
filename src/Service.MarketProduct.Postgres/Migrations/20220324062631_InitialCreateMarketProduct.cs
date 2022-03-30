@@ -24,12 +24,16 @@ namespace Service.MarketProduct.Postgres.Migrations
                     Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Disabled = table.Column<bool>(type: "boolean", nullable: true),
                     Price = table.Column<decimal>(type: "numeric", nullable: true),
-                    Category = table.Column<string>(type: "text", nullable: false)
+                    Category = table.Column<string>(type: "text", nullable: false),
+                    Priority = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table => table.PrimaryKey("PK_market_product", x => x.ProductType));
 
-            void InsertData(MarketProductType productType, MarketProductCategory category) =>
-                migrationBuilder.InsertData(tableName, new[] { nameof(MarketProductEntity.ProductType), nameof(MarketProductEntity.Category) }, new object[] { productType.ToString(), category.ToString() }, schema);
+	        void InsertData(MarketProductType productType, MarketProductCategory category) => migrationBuilder.InsertData(
+		        tableName,
+		        new[] {nameof(MarketProductEntity.ProductType), nameof(MarketProductEntity.Category), nameof(MarketProductEntity.Priority)},
+		        new object[] {productType.ToString(), category.ToString(), 0},
+		        schema);
 
             InsertData(MarketProductType.RetryPack1, MarketProductCategory.Education);
             InsertData(MarketProductType.RetryPack10, MarketProductCategory.Education);

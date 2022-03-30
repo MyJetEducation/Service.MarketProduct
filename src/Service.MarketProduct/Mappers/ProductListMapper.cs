@@ -12,6 +12,7 @@ namespace Service.MarketProduct.Mappers
 			Disabled = entity.Disabled == true,
 			Category = entity.Category,
 			Price = entity.Price,
+			Priority = entity.Priority,
 			ProductType = entity.ProductType
 		};
 
@@ -21,6 +22,7 @@ namespace Service.MarketProduct.Mappers
 			entity.Date = now;
 			entity.Category = request.Category;
 			entity.Price = request.Price;
+			entity.Priority = request.Priority;
 			entity.ProductType = request.ProductType;
 		}
 	}
