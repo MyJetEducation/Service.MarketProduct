@@ -9,7 +9,7 @@
 		{
 			MarketProductType.MascotEmotion,
 			MarketProductType.MascotSkin,
-			MarketProductType.MascotСharacter
+			MarketProductType.MascotCharacter
 		};
 
 		/// <summary>

@@ -40,7 +40,7 @@ namespace Service.MarketProduct.Postgres.Migrations
             InsertData(MarketProductType.RetryPack25, MarketProductCategory.Education);
             InsertData(MarketProductType.RetryPack100, MarketProductCategory.Education);
             InsertData(MarketProductType.EducationProgressWipe, MarketProductCategory.Education);
-            InsertData(MarketProductType.MascotСharacter, MarketProductCategory.Masccot);
+            InsertData(MarketProductType.MascotCharacter, MarketProductCategory.Masccot);
             InsertData(MarketProductType.MascotSkin, MarketProductCategory.Masccot);
             InsertData(MarketProductType.MascotEmotion, MarketProductCategory.Masccot);
         }
