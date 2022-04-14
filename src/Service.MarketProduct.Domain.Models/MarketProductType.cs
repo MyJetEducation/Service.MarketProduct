@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Service.MarketProduct.Domain.Models
 {
@@ -16,7 +16,7 @@ namespace Service.MarketProduct.Domain.Models
 		EducationProgressWipe,
 
 		//mascot types
-		MascotСharacter,
+		MascotCharacter,
 		MascotSkin,
 		MascotEmotion
 	}
